@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>John Sample</title>
-    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+    <title>Htaik Ay Mi Lin</title>
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/media.css" />
     <link
@@ -14,6 +13,645 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+      /* Enhanced Global Styles */
+      :root {
+        --primary: #6c63ff;
+        --primary-dark: #564fd8;
+        --secondary: #ff6584;
+        --dark: #2d2e32;
+        --light: #f9f9f9;
+        --gray: #767676;
+        --light-gray: #dbdbdb;
+        --white: #ffffff;
+        --black: #000000;
+      }
+      
+      body {
+        font-family: 'Poppins', sans-serif;
+        color: var(--dark);
+        background-color: var(--light);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+      
+      /* Enhanced Header */
+      .header {
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+        transition: all 0.3s ease;
+      }
+      
+      .header.scrolled {
+        background: rgba(255, 255, 255, 0.98);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      }
+      
+      .logo {
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: var(--primary);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+      }
+      
+      .logo::before {
+        content: "<";
+        color: var(--primary);
+      }
+      
+      .logo::after {
+        content: "/>";
+        color: var(--primary);
+      }
+      
+      .nav-list {
+        display: flex;
+        gap: 2rem;
+      }
+      
+      .nav-link {
+        color: var(--dark);
+        font-weight: 500;
+        position: relative;
+        padding: 0.5rem 0;
+      }
+      
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--primary);
+        transition: width 0.3s ease;
+      }
+      
+      .nav-link:hover::after,
+      .nav-link.active::after {
+        width: 100%;
+      }
+      
+      .nav-btn {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+      
+      /* Enhanced Hero Section */
+      
+      /* Enhanced Social Links */
+      .social-links-row {
+        display: flex;
+        gap: 1.5rem;
+        margin: 2rem 0;
+      }
+      
+      .social-links-row a {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--white);
+        color: var(--dark);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+      
+      .social-links-row a:hover {
+        background: var(--primary);
+        color: var(--white);
+        transform: translateY(-5px);
+      }
+      
+      .social-links-row img {
+        width: 20px;
+        height: 20px;
+      }
+      
+      /* Enhanced Buttons */
+      .btn {
+        display: inline-block;
+        padding: 0.8rem 2rem;
+        background: var(--primary);
+        color: var(--white);
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 500;
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+        transition: all 0.3s ease;
+        border: 2px solid var(--primary);
+        box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+      }
+      
+      .btn:hover {
+        background: var(--primary-dark);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(108, 99, 255, 0.4);
+      }
+      
+      .btn-white {
+        background: transparent;
+        color: var(--primary);
+        line-height: 100%;
+
+      }
+      
+      .btn-white:hover {
+        background: var(--primary);
+        color: var(--white);
+      }
+      
+      .btn-red {
+        background: var(--secondary);
+        border-color: var(--secondary);
+        box-shadow: 0 5px 15px rgba(255, 101, 132, 0.3);
+        line-height: 100%;
+      }
+      
+      .btn-red:hover {
+        background: #ff4d73;
+        box-shadow: 0 8px 20px rgba(255, 101, 132, 0.4);
+      }
+      
+      /* Enhanced Section Titles */
+      .title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 3rem;
+        position: relative;
+        display: inline-block;
+      }
+      
+      .title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 50px;
+        height: 4px;
+        background: var(--primary);
+        border-radius: 2px;
+      }
+      
+      /* Enhanced About Section */
+      .about {
+        padding: 6rem 0;
+        background: var(--white);
+      }
+      
+      .about-row {
+        display: flex;
+        gap: 3rem;
+        align-items: center;
+      }
+      
+      .about-content {
+        flex: 1;
+      }
+      
+      .about-descr {
+        color: var(--gray);
+        margin-bottom: 2rem;
+        line-height: 1.8;
+      }
+      
+      .about-skills {
+        flex: 1;
+      }
+      
+      .skill {
+        margin-bottom: 1.5rem;
+      }
+      
+      .skill-title {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+      }
+      
+      .skill-percent {
+        color: var(--primary);
+      }
+      
+      .skill-bar__progress {
+        height: 8px;
+        background: var(--light-gray);
+        border-radius: 4px;
+        overflow: hidden;
+      }
+      
+      .skill-bar__fill {
+        height: 100%;
+        background: var(--primary);
+        border-radius: 4px;
+        width: 0;
+        transition: width 1.5s ease;
+      }
+      
+      /* Enhanced Services */
+      .services-row {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 4rem;
+      }
+      
+      .service-card {
+        background: var(--white);
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      
+      .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      }
+      
+      .service-card-img {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 1.5rem;
+      }
+      
+      .service-card-title {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+        color: var(--dark);
+      }
+      
+      .service-card p {
+        color: var(--gray);
+        line-height: 1.7;
+      }
+      
+      /* Enhanced Projects Section */
+      .projects {
+        padding: 6rem 0;
+        background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
+      }
+      
+      .projects-row {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+      
+      .project-box {
+        border-radius: 15px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+      
+      .project-box:hover {
+        transform: translateY(-10px);
+      }
+      
+      .project-img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.5s ease;
+      }
+      
+      .project-box:hover .project-img {
+        transform: scale(1.05);
+      }
+      
+      .project-mask {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(108, 99, 255, 0.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      
+      .project-box:hover .project-mask {
+        opacity: 1;
+      }
+      
+      .project-caption {
+        text-align: center;
+        padding: 1rem;
+      }
+      
+      .project-caption h5 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+      
+      /* Enhanced Contact Section */
+      .contact {
+        padding: 6rem 0;
+        background: var(--white);
+      }
+      
+      .contact-content {
+        max-width: 600px;
+        margin: 0 auto 3rem;
+        text-align: center;
+      }
+      
+      .contact-content p {
+        font-size: 1.2rem;
+        color: var(--gray);
+      }
+      
+      .contactForm {
+        max-width: 700px;
+        margin: 0 auto;
+      }
+      
+      .input-box {
+        display: flex;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+      
+      .input-box input {
+        flex: 1;
+      }
+      
+      input, textarea {
+        width: 100%;
+        padding: 1rem;
+        border: 1px solid var(--light-gray);
+        border-radius: 8px;
+        font-family: inherit;
+        font-size: 1rem;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      }
+      
+      input:focus, textarea:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.2);
+      }
+      
+      textarea {
+        min-height: 150px;
+        resize: vertical;
+      }
+      
+      .contact-button {
+        text-align: center;
+        margin-top: 2rem;
+      }
+      
+      /* Go To Top Button */
+      .goToTop {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: var(--primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 5px 20px rgba(108, 99, 255, 0.3);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 999;
+      }
+      
+      .goToTop.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      
+      .goToTop:hover {
+        background: var(--primary-dark);
+        transform: translateY(-5px);
+      }
+      
+      .goToTop img {
+        width: 20px;
+        height: 20px;
+      }
+      
+      /* Responsive Styles */
+      @media (max-width: 992px) {
+        .hero-heading {
+          font-size: 2.8rem;
+        }
+        
+        .about-row {
+          flex-direction: column;
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .nav-list {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: 80%;
+          max-width: 300px;
+          height: 100vh;
+          background: var(--white);
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 2rem;
+          transition: right 0.3s ease;
+          box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+          z-index: 999;
+        }
+        
+        .nav-list.active {
+          right: 0;
+        }
+        
+        .nav-btn {
+          display: block;
+          z-index: 1000;
+        }
+        
+        .hero {
+          padding: 8rem 0 4rem;
+        }
+        
+        .hero-row {
+          flex-direction: column-reverse;
+          gap: 3rem;
+        }
+        
+        .hero-heading {
+          font-size: 2.5rem;
+        }
+        
+        .hero-heading-subtitle {
+          font-size: 1.2rem;
+        }
+        
+        .hero-img {
+          max-width: 300px;
+          margin: 0 auto;
+        }
+        
+        .input-box {
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+      }
+      
+      @media (max-width: 576px) {
+        .hero-heading {
+          font-size: 2rem;
+        }
+        
+        .btn {
+          display: block;
+          width: 100%;
+          text-align: center;
+          margin-right: 0;
+        }
+
+        
+        .title {
+          font-size: 2rem;
+        }
+      }
+      
+      /* Animation Keyframes */
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
+        100% { transform: translateY(0px); }
+      }
+      
+      .floating {
+        animation: float 3s ease-in-out infinite;
+      }
+
+
+
+
+
+
+
+      
+
+
+/* Updated Hero Section Styles */
+.hero {
+  padding: 10rem 0 5rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-row {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.hero-img-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-img-container {
+  width: 500px;
+  height: 400px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.hero-img-container:hover .hero-img {
+  transform: scale(1.05);
+}
+
+/* Floating animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .hero-row {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  
+  .hero-content {
+    margin-top: 2rem;
+  }
+  
+  .hero-buttons {
+    justify-content: center;
+  }
+  
+  .social-links-row {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-img-container {
+    width: 280px;
+    height: 280px;
+  }
+  
+  .hero-heading {
+    font-size: 2.5rem;
+  }
+  
+  .hero-heading-subtitle {
+    font-size: 1.2rem;
+  }
+}
+
+
+    </style>
   </head>
 
   <body>
@@ -25,7 +663,7 @@
             class="logo"
             data-aos="fade-down"
             data-aos-duration="1000"
-            >J.Sample</a
+            >HAML</a
           >
           <nav id="nav" class="nav">
             <ul class="nav-list" data-aos="fade-down" data-aos-duration="1000">
@@ -36,7 +674,7 @@
                 <a href="#about" class="nav-link">About</a>
               </li>
               <li class="nav-item">
-                <a href="#projects" class="nav-link">Works</a>
+                <a href="#projects" class="nav-link">Projects</a>
               </li>
               <li class="nav-item">
                 <a href="#contact" class="nav-link">Contact</a>
@@ -55,71 +693,51 @@
     </header>
 
     <section id="home" class="hero">
-      <div class="container container-lg">
-        <div
-          class="hero-row"
-          data-aos="fade-zoom-in"
-          data-aos-easing="ease-in-out"
-          data-aos-delay="500"
-          data-aos-duration="1000"
-        >
-          <div class="hero-content">
-            <span class="hero-greeting"> Hello, I am</span>
-            <h1 class="hero-heading">John Sample</h1>
-            <span class="hero-heading-subtitle"
-              >UI/UX Designer & Software Developer</span
-            >
-            <div class="about-social-list">
-              <div class="social-links-row">
-                <a href="#!">
-                  <img
-                    src="img/social_icons/github.svg"
-                    alt="Link to GitHub account"
-                  />
-                </a>
-
-                <a href="#!">
-                  <img
-                    src="img/social_icons/linkedin.svg"
-                    alt="Link to linkedin profile"
-                  />
-                </a>
-
-                <a href="#!">
-                  <img
-                    src="img/social_icons/xing.svg"
-                    alt="Link to Xing profile"
-                  />
-                </a>
-
-                <a href="#!">
-                  <img
-                    src="img/social_icons/facebook.svg"
-                    alt="Link to facebook profile"
-                /></a>
-                <a href="#!">
-                  <img
-                    src="img/social_icons/instagram.svg"
-                    alt="Link to instagram profile"
-                /></a>
-              </div>
-            </div>
-
-            <div>
-              <a href="#projects" class="btn">My Portfolio</a>
-              <a href="#contact" class="btn btn-white">Contact Me</a>
-            </div>
-          </div>
-          <div class="hero-img">
-            <img
-              src="img/hero/hero.png"
-              alt="Picture of Christian Buehner taken from Unsplash</a>
-              "
-            />
+  <div class="container container-lg">
+    <div
+      class="hero-row"
+      data-aos="fade-zoom-in"
+      data-aos-easing="ease-in-out"
+      data-aos-delay="500"
+      data-aos-duration="1000"
+    >
+      <div class="hero-content">
+        <span class="hero-greeting"> Hello, I am</span>
+        <h1 class="hero-heading">Htaik Ay Mi Lin</h1>
+        <span class="hero-heading-subtitle">Web Developer</span>
+        
+        <div class="about-social-list">
+          <div class="social-links-row">
+            <a href="https://github.com/Ay40">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/htaik-ay-mi-lin-86066536a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.facebook.com/hazel.mi.430862">
+              <i class="fab fa-facebook-f"></i>
+            </a>
           </div>
         </div>
+
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-white">My Portfolio</a>
+          <a href="#contact" class="btn btn-white">Contact Me</a>
+        </div>
       </div>
-    </section>
+      
+      <div class="hero-img-wrapper">
+        <div class="hero-img-container floating">
+          <img
+            src="img/hero/hero.jpg"
+            alt="Portrait of Htaik Ay Mi Lin"
+            class="hero-img"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
     <section id="about" class="about">
       <div class="container">
@@ -132,18 +750,16 @@
             data-aos="fade-up"
             data-aos-duration="1000"
           >
-            <p class="about-descr">
-              Hi, I’m John Sample, a passionate designer and developer
-              specializing in web development, graphic design and photography.
-              With over 10 years of experience, I love transforming ideas into
-              impactful creations that connect and inspire. Outside of work, I
-              enjoy exploring new places, learning new skills and capturing
-              life’s moments. <br /><br />Let’s collaborate and bring your
-              vision to life!
+            
+             <p class="about-descr">
+              Hi, I'm Htaik Ay Mi Lin, a final-year IT student at TU Hmawbi with a passion for crafting dynamic, user-friendly web experiences. Armed with a strong foundation in HTML, CSS, JavaScript, Bootstrap, PHP, and Laravel, I thrive on turning ideas into functional, elegant solutions—from authentication systems and role-based management to interactive blogs, mini-games, and productivity tools.
+
+              My hands-on experience at MPT's Network Operation Center (NOC) honed my problem-solving skills in real-world tech environments, while my LCCI Level 3 certification reflects my dedication to professional growth. Whether it's coding a sleek todo list or engineering a robust Laravel project, I love the challenge of blending creativity with logic.
+
+              <br /><br />Let's build something amazing together—where your vision meets my technical grit!
             </p>
-            <div class="about-download-btn">
-              <a href="#!" class="btn btn-white">Download CV</a>
-            </div>
+
+            
           </div>
           <div
             class="about-skills"
@@ -152,31 +768,31 @@
             data-aos-delay="100"
           >
             <div class="skill">
-              <div class="skill-title">Web Design</div>
-              <div class="skill-percent">95%</div>
+              <div class="skill-title">PHP</div>
+              <div class="skill-percent">85%</div>
               <div class="skill-bar__progress">
-                <div class="skill-bar__fill" data-progress="95"></div>
+                <div class="skill-bar__fill" data-progress="85"></div>
               </div>
             </div>
             <div class="skill">
-              <div class="skill-title">HTML/CSS</div>
-              <div class="skill-percent">90%</div>
+              <div class="skill-title">JS</div>
+              <div class="skill-percent">80%</div>
               <div class="skill-bar__progress">
-                <div class="skill-bar__fill" data-progress="90"></div>
+                <div class="skill-bar__fill" data-progress="80"></div>
               </div>
             </div>
             <div class="skill">
-              <div class="skill-title">JavaScript</div>
+              <div class="skill-title">Laravel</div>
               <div class="skill-percent">65%</div>
               <div class="skill-bar__progress">
                 <div class="skill-bar__fill" data-progress="65"></div>
               </div>
             </div>
             <div class="skill">
-              <div class="skill-title">Photoshop</div>
-              <div class="skill-percent">80%</div>
+              <div class="skill-title">Networking</div>
+              <div class="skill-percent">30%</div>
               <div class="skill-bar__progress">
-                <div class="skill-bar__fill" data-progress="80"></div>
+                <div class="skill-bar__fill" data-progress="30"></div>
               </div>
             </div>
           </div>
@@ -188,25 +804,12 @@
             data-aos-duration="1000"
             data-aos-delay="50"
           >
-            <img class="service-card-img" src="img/services/01.svg" alt="" />
-            <h3 class="service-card-title">UI/UX Design</h3>
+            <div class="service-card-img">
+              <i class="fas fa-code" style="font-size: 2.5rem; color: var(--primary);"></i>
+            </div>
+            <h3 class="service-card-title">Web Development</h3>
             <p>
-              Crafting intuitive and visually appealing user interfaces that
-              enhance experiences through thoughtful, creative designs.
-            </p>
-          </div>
-
-          <div
-            class="service-card"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-delay="200"
-          >
-            <img class="service-card-img" src="img/services/02.svg" alt="" />
-            <h3 class="service-card-title">Frontend Development</h3>
-            <p>
-              Developing responsive, accessible, and dynamic websites using
-              modern tools to create seamless, engaging experiences.
+              Building fast, responsive, and user-friendly websites with HTML, CSS, JavaScript, and Bootstrap—optimized for both functionality and aesthetics.
             </p>
           </div>
 
@@ -216,11 +819,27 @@
             data-aos-duration="1000"
             data-aos-delay="500"
           >
-            <img class="service-card-img" src="img/services/03.svg" alt="" />
-            <h3 class="service-card-title">Content Writing</h3>
+            <div class="service-card-img">
+              <i class="fas fa-server" style="font-size: 2.5rem; color: var(--primary);"></i>
+            </div>
+            <h3 class="service-card-title">Backend Development</h3>
             <p>
-              Creating compelling and audience-focused content that effectively
-              communicates ideas and delivers meaningful value.
+              Developing secure, scalable systems with PHP, MySQL, and Laravel, from authentication flows to role-based management and dynamic blogs.
+            </p>
+          </div>
+
+          <div
+            class="service-card"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="50"
+          >
+            <div class="service-card-img">
+              <i class="fas fa-network-wired" style="font-size: 2.5rem; color: var(--primary);"></i>
+            </div>
+            <h3 class="service-card-title">Network & Troubleshooting</h3>
+            <p>
+              Leveraging hands-on NOC experience at MPT to diagnose issues and ensure robust, efficient systems.
             </p>
           </div>
         </div>
@@ -230,7 +849,7 @@
     <section id="projects" class="projects">
       <div class="container container-lg">
         <div class="projects-title">
-          <h2 class="title">Works</h2>
+          <h2 class="title">Projects</h2>
         </div>
 
         <div class="projects-row">
@@ -241,11 +860,11 @@
             data-aos-duration="1000"
           >
             <a href="#!">
-              <img class="project-img" src="img/works/01.jpg" alt="" />
+              <img class="project-img" src="img/works/por1.png" alt="" />
               <div class="project-mask">
                 <div class="project-caption">
-                  <h5 class="white">Finance Dashboard</h5>
-                  <p class="white">UI/UX Design</p>
+                  <h5 class="white">PHP Project</h5>
+                  <p class="white">User Management</p>
                 </div>
               </div>
             </a>
@@ -258,11 +877,11 @@
             data-aos-duration="1000"
           >
             <a href="#!">
-              <img class="project-img" src="img/works/02.jpg" alt="" />
+              <img class="project-img" src="img/works/blog.png" alt="" />
               <div class="project-mask">
                 <div class="project-caption">
-                  <h5 class="white">Product design</h5>
-                  <p class="white">UI/UX Design</p>
+                  <h5 class="white">Laravel Project</h5>
+                  <p class="white">Blog System</p>
                 </div>
               </div>
             </a>
@@ -275,11 +894,11 @@
             data-aos-duration="1000"
           >
             <a href="#!">
-              <img class="project-img" src="img/works/03.jpg" alt="" />
+              <img class="project-img" src="img/works/Calculator.png" alt="" />
               <div class="project-mask">
                 <div class="project-caption">
-                  <h5 class="white">Landing Page</h5>
-                  <p class="white">UI/UX Design, Web Development</p>
+                  <h5 class="white">Calculator</h5>
+                  <p class="white">JavaScript</p>
                 </div>
               </div>
             </a>
@@ -292,11 +911,11 @@
             data-aos-duration="1000"
           >
             <a href="#!">
-              <img class="project-img" src="img/works/04.jpg" alt="" />
+              <img class="project-img" src="img/works/game.png" alt="" />
               <div class="project-mask">
                 <div class="project-caption">
-                  <h5 class="white">Portfolio</h5>
-                  <p class="white">Web Development</p>
+                  <h5 class="white">Rock-Paper-Scissors</h5>
+                  <p class="white">Game</p>
                 </div>
               </div>
             </a>
@@ -309,11 +928,11 @@
             data-aos-duration="1000"
           >
             <a href="#!">
-              <img class="project-img" src="img/works/05.jpg" alt="" />
+              <img class="project-img" src="img/works/por3.png" alt="" />
               <div class="project-mask">
                 <div class="project-caption">
-                  <h5 class="white">Cosmic Sea</h5>
-                  <p class="white">UI/UX Design, Web Development</p>
+                  <h5 class="white">ToDoList</h5>
+                  <p class="white">Responsive Design</p>
                 </div>
               </div>
             </a>
@@ -326,11 +945,11 @@
             data-aos-duration="1000"
           >
             <a href="#!">
-              <img class="project-img" src="img/works/06.jpg" alt="" />
+              <img class="project-img" src="img/works/teamwork.jpg" alt="" />
               <div class="project-mask">
                 <div class="project-caption">
-                  <h5 class="white">eCommerce</h5>
-                  <p class="white">Web Development</p>
+                  <h5 class="white">Network Internship Program at MPT</h5>
+                  <p class="white">NOC</p>
                 </div>
               </div>
             </a>
@@ -387,52 +1006,10 @@
       </div>
     </section>
 
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-row">
-          <div class="social-links-row footer-social">
-            <a href="#!">
-              <img
-                src="img/social_icons/github.svg"
-                alt="Link to GitHub account"
-              />
-            </a>
-
-            <a href="#!">
-              <img
-                src="img/social_icons/linkedin.svg"
-                alt="Link to linkedin profile"
-              />
-            </a>
-
-            <a href="#!">
-              <img src="img/social_icons/xing.svg" alt="Link to Xing profile" />
-            </a>
-
-            <a href="#!">
-              <img
-                src="img/social_icons/facebook.svg"
-                alt="Link to facebook profile"
-            /></a>
-
-            <a href="#!">
-              <img
-                src="img/social_icons/instagram.svg"
-                alt="Link to instagram profile"
-            /></a>
-          </div>
-
-          <div class="footer-copyright">
-            <p>&copy; Copyright John Sample 2024</p>
-          </div>
-        </div>
-      </div>
-    </footer>
-
     <div id="goToTop" class="goToTop">
       <a href="#home">
-        <img src="img/icons/arrow_up.svg" alt="Back to top"
-      /></a>
+        <i class="fas fa-arrow-up" style="color: white;"></i>
+      </a>
     </div>
 
     <script
@@ -442,5 +1019,95 @@
       referrerpolicy="no-referrer"
     ></script>
     <script type="module" src="js/main.js"></script>
+    <script>
+      // Initialize AOS animation library
+      AOS.init({
+        once: true
+      });
+      
+      // Handle scroll to show/hide go to top button
+      window.addEventListener('scroll', function() {
+        const goToTop = document.getElementById('goToTop');
+        if (window.pageYOffset > 300) {
+          goToTop.classList.add('active');
+        } else {
+          goToTop.classList.remove('active');
+        }
+      });
+      
+      // Handle mobile navigation toggle
+      const navBtn = document.getElementById('nav-btn');
+      const navList = document.querySelector('.nav-list');
+      
+      navBtn.addEventListener('click', function() {
+        navList.classList.toggle('active');
+        
+        // Change button icon
+        const isOpen = navList.classList.contains('active');
+        const btnImg = document.getElementById('nav-btn-img');
+        btnImg.src = isOpen ? 'img/icons/close.svg' : 'img/icons/open.svg';
+      });
+      
+      // Close mobile menu when clicking a link
+      const navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          navList.classList.remove('active');
+          document.getElementById('nav-btn-img').src = 'img/icons/open.svg';
+        });
+      });
+      
+      // Animate skill bars on scroll
+      const skillBars = document.querySelectorAll('.skill-bar__fill');
+      
+      function animateSkillBars() {
+        skillBars.forEach(bar => {
+          const progress = bar.getAttribute('data-progress');
+          bar.style.width = progress + '%';
+        });
+      }
+      
+      // Use Intersection Observer to trigger skill bar animation
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateSkillBars();
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      
+      const aboutSection = document.querySelector('.about');
+      if (aboutSection) {
+        observer.observe(aboutSection);
+      }
+      
+      // Add smooth scrolling to all links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+      
+      // Add scroll effect to header
+      window.addEventListener('scroll', function() {
+        const header = document.getElementById('header');
+        if (window.pageYOffset > 50) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+    </script>
   </body>
 </html>
